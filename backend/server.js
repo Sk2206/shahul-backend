@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
 const videoRoutes = require("./routes/videos");
-const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/User");
 const adminRoutes = require("./routes/admin");
 const paymentAccountsRoute = require("./routes/admin/paymentAccounts");
 
