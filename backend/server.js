@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: 'https://frontend-domain.com', 
+  origin: 'https://nitinshukla.com', 
   credentials: true 
 }));
 app.use(express.json());
