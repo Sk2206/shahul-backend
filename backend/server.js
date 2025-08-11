@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: 'https://nitinshukla.com', 
+  origin: 'http://localhost:5000?', 
   credentials: true 
 }));
 app.use(express.json());
