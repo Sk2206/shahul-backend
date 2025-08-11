@@ -13,7 +13,10 @@ const paymentAccountsRoute = require("./routes/admin/paymentAccounts");
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: 'https://frontend-domain.com', 
+  credentials: true 
+}));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
