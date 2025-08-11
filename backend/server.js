@@ -15,7 +15,7 @@ const app = express();
 // Middlewares
 app.use(cors({
   origin: '*', 
-  credentials: true 
+  credentials: false 
 }));
 app.use(express.json());
 app.use('/uploads', express.static('uploads', {
