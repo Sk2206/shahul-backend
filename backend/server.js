@@ -14,15 +14,13 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: '*', 
-  credentials: false 
+  origin: ["https://nitinshukla.com/", "http://localhost:3000"],
+  methods: ["GET", "POST"],
+  credentials: true
 }));
+
 app.use(express.json());
-app.use('/uploads', express.static('uploads', {
-  setHeaders: (res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://nitinshukla.com');
-  }
-}));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
