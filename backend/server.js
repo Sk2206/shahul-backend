@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: ["https://nitinshukla.com/", "http://localhost:3000"],
+  origin: ["https://nitinshukla.com", "http://localhost:3000"],
   methods: ["GET", "POST"],
   credentials: true
 }));
