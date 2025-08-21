@@ -86,10 +86,11 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     console.error("Login error:", err);
-    console.error("Error Stack:", error.stack);
+    console.error("Error Stack:", err.stack);
     res.status(500).json({ message: "Server error" });
   }
 });
 
 module.exports = router;
+
 
