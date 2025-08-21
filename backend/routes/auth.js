@@ -86,8 +86,10 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     console.error("Login error:", err);
+    console.error("Error Stack:", error.stack);
     res.status(500).json({ message: "Server error" });
   }
 });
 
 module.exports = router;
+
