@@ -37,6 +37,7 @@ router.post("/", upload.single("qrCode"), async (req, res) => {
     res.status(201).json({ success: true, account: newAccount });
   } catch (err) {
     console.error(err);
+    console.log("File received:", req.file);
     res.status(500).json({ success: false, error: err.message });
   }
 });
@@ -73,3 +74,4 @@ router.put("/activate", async (req, res) => {
   res.json({ message: "Active account updated" });
 });
 module.exports = router;
+
