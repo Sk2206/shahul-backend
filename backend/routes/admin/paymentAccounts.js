@@ -20,7 +20,7 @@ router.post("/", upload.single("qrCode"), async (req, res) => {
     if (!type) return res.status(400).json({ success: false, message: "Type is required" });
 
     let accountData = { type };
-
+    console.log("Type=",type);
     if (type === "upi") {
       if (!upiId) return res.status(400).json({ success: false, message: "UPI ID required" });
       accountData.upiId = upiId;
@@ -74,4 +74,5 @@ router.put("/activate", async (req, res) => {
   res.json({ message: "Active account updated" });
 });
 module.exports = router;
+
 
