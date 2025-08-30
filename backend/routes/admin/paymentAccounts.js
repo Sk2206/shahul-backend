@@ -65,6 +65,7 @@ router.put("/activate/:id", async (req, res) => {
   }
 });
 router.put("/activate", async (req, res) => {
+  try{
   const { accountId } = req.body;
   if (!accountId) return res.status(400).json({ error: "Account ID required" });
 
@@ -72,7 +73,13 @@ router.put("/activate", async (req, res) => {
   await PaymentAccount.findByIdAndUpdate(accountId, { isActive: true });
 
   res.json({ message: "Active account updated" });
+  }
+  catch (err) {
+  console.error(err);
+  res.status(500).json({ success: false, error: err.message });
+}
 });
 module.exports = router;
+
 
 
